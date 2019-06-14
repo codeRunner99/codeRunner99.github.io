@@ -6,22 +6,25 @@ exclude: ["README.md"] # files to exclude
 highlighter: rouge
 markdown: kramdown
 disqus: shubham
-google_analytics: shubham
-title: shubham
+google_analytics: Shubham
+title: Google Summer of Code 2019
 
 defaults:
   -
     scope:
       path: "" # empty string for all files
     values:
-      title: shubham
+      title: GSoC Project Progress
 
-description: Stylish Jekyll Theme
+description: GSoC 2019 with KDE!
 author:
   name: Shubham
   email: shubham.jangra@kdemail.net
   github: Shubham-100
-  bio: GSoC 2019
+  bio: Experiencing freedom with KDE!
+#  twitter: dbtek
+#  pinterest: asd123
+#  linkedin: asd123
 #  email_md5: 726351295ec82e145928582f595aa3aa
 
 rss_path: feed.xml
