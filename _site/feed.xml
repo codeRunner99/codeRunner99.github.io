@@ -7,27 +7,62 @@
 		<atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>First month progress</title>
+				<description>&lt;p&gt;&lt;strong&gt;Hellp people!!&lt;/strong&gt; I am here presenting you with my monthly GSoC project report. I will be providing the links to my work at the end of the section.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;A bit of background:&lt;/strong&gt;
+Its been a great first month of Google Summer of Code for me. I was so excited that I had started writing code a week before the actual coding period started. First month as I had expected, had been quite hectic and to add onto it, my semester end examinations are also running at the moment. So I had to manage my time efficiently which I believed have done great so far. Coming to the progress made during this period, I have done the following:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1.1 Implement PolkitQt1 Authorization backend:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Here I had aimed to implement the same Polkit back-end as the one implemented by KAuth currently. I had to replicate the same behaviour and just remove the mediator ie. KAuth from in between.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1.2 Scrap Public Key Cryptography code based on QCA as QDbus is secure enough:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;QDbus already provides enough security to the calls made by the application to the helper. Hence no need to encrypt, sign the requests of the application and verify their integrity at the helper side.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1.3 Establish QDBus communication from helper towards Application:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Previously the Application to Helper communication was done through QDBus session and Helper to Application was done via KAuth. In this task, I had aimed to remove KAuth and establish QDbus mode of communication here as well. I have linked the patches to the above tasks below in “Patches” section.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Links to my patches:&lt;/strong&gt;
+If you are a mind with curiousity, you can checkout the patches I have submitted over phabricator here.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1. &lt;a href=&quot;https://phabricator.kde.org/D21970&quot;&gt;PolkitQt1 Authorization backend&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2. &lt;a href=&quot;https://phabricator.kde.org/D21275&quot;&gt;Scrap Public Key Cryptography code (PKC)&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3. &lt;a href=&quot;https://phabricator.kde.org/D21773&quot;&gt;QDBus communication from helper towards Application&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Only the second patch(scrap PKC) is merged into master, rest others are still Work under progress.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://cgit.kde.org/kpmcore.git/?h=auth-polkit-qt1&quot;&gt;Link to cgit repository&lt;/a&gt;&lt;/strong&gt;
+Curious minds may try having a look at the code and maybe give suggestions/advice about the code.&lt;/p&gt;
+
+&lt;p&gt;Till next time, bye bye!!&lt;/p&gt;
+</description>
+				<pubDate>Wed, 26 Jun 2019 00:00:00 +0530</pubDate>
+				<link>/general/setup/demo/2019/06/26/First-month-progress.html</link>
+				<guid isPermaLink="true">/general/setup/demo/2019/06/26/First-month-progress.html</guid>
+			</item>
+		
+			<item>
+				<title>What my project is all about? Porting Authentication to Polit-qt-1</title>
+				<description>&lt;p&gt;&lt;strong&gt;KDE Partition Manager&lt;/strong&gt; runs all the authentication or authorization protocols over KAuth (KDE Authentication), which is a tier 2 library from KDE Frameworks. In the current implementation of KDE Partition Manager, all the privileged tasks such as executing some external program like btrfs, sfdisk etc. Or copying a block of data from one partition to the other, which requires escalated permissions to execute are executed by a helper non GUI application. So, instead of running whole GUI application (KDE Partition Manager) as root or superuser, a helper non GUI application is spawned which runs as root and executes privileged tasks. This helper program communicates with KDE Partition Manager over simple DBus protocol. The current implementation may seem a good idea, but is not, the reason being that KAuth is an extra layer added over Polkit-qt which causes extra overhead. So, the proposal for this project is to port all the authentication/authorization code from KAuth to Polkit-qt without effecting the original behaviour of KDE Partition Manager.&lt;/p&gt;
+
+</description>
+				<pubDate>Wed, 26 Jun 2019 00:00:00 +0530</pubDate>
+				<link>/general/setup/demo/2019/06/26/About-project.html</link>
+				<guid isPermaLink="true">/general/setup/demo/2019/06/26/About-project.html</guid>
+			</item>
+		
+			<item>
 				<title>About me...huh, Who am I?</title>
 				<description>&lt;p&gt;I am &lt;strong&gt;Shubham&lt;/strong&gt;, a 3rd year undergraduate student, pursuing my B.E(Bachelor of Engineering) at BMS Institute of Technology and Management, Bangalore, India. I am an amateur open source enthusiast and developer, mostly working with C++ with Qt framework to build some stand alone applications. I also have descent knowlege of C, Java, Python, bash scripting, git and I love developing under the linux environment. I also practice competitve programming at various online judges. Apart from coding, in my spare time I go for Cricket or Volleyball to keep myself refreshed.&lt;/p&gt;
 </description>
 				<pubDate>Sat, 15 Jun 2019 00:00:00 +0530</pubDate>
 				<link>/general/setup/demo/2019/06/15/About-me.html</link>
 				<guid isPermaLink="true">/general/setup/demo/2019/06/15/About-me.html</guid>
-			</item>
-		
-			<item>
-				<title>Hello World!</title>
-				<description>&lt;p&gt;&lt;strong&gt;dbyll&lt;/strong&gt; is minimalist, stylish theme for jekyll. Supports gravatar, account links (github, twitter, e-mail, pinterest, résume file) and a bio.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;dbyll&lt;/strong&gt; is brought to you by &lt;strong&gt;&lt;a href=&quot;http://ismaildemirbilek.com&quot;&gt;dbtek&lt;/a&gt;&lt;/strong&gt;. Open sourced under &lt;a href=&quot;http://opensource.org/licenses/MIT&quot;&gt;MIT&lt;/a&gt; license.&lt;/p&gt;
-
-&lt;h3 id=&quot;dbyll-is-on-github&quot;&gt;dbyll is on GitHub&lt;/h3&gt;
-
-&lt;p&gt;&lt;a class=&quot;btn btn-default&quot; href=&quot;https://github.com/dbtek/dbyll&quot;&gt;Grab your copy now!&lt;/a&gt;&lt;/p&gt;
-</description>
-				<pubDate>Fri, 15 Nov 2013 00:00:00 +0530</pubDate>
-				<link>/general/setup/demo/2013/11/15/hello-world.html</link>
-				<guid isPermaLink="true">/general/setup/demo/2013/11/15/hello-world.html</guid>
 			</item>
 		
 	</channel>
